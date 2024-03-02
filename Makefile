@@ -15,7 +15,7 @@ endif
 ifeq ($(PLATFORM),PLATFORM_WEB)
     CC = emcc
     EXT = .html
-    CFLAGS ?= $(DEFINES) $(RAYLIB_DIR)/raylib/src/libraylib.bc -Os -s USE_GLFW=3 -s FORCE_FILESYSTEM=1 -s MAX_WEBGL_VERSION=2 -s ALLOW_MEMORY_GROWTH=1 --preload-file $(dir $<)resources@resources --shell-file ./shell.html $(INCLUDE_DIR) $(LIBRARY_DIR)
+    CFLAGS ?= $(DEFINES) $(RAYLIB_DIR)/raylib/src/libraylib.a -Os -s USE_GLFW=3 -s FORCE_FILESYSTEM=1 -s MAX_WEBGL_VERSION=2 -s ALLOW_MEMORY_GROWTH=1 --preload-file $(dir $<)resources@resources --shell-file ./shell.html $(INCLUDE_DIR) $(LIBRARY_DIR)
 endif
 
 SOURCE = $(wildcard *.cpp)

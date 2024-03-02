@@ -1218,10 +1218,10 @@ int main(void)
 {
     // Init Window
     
-    // const int screen_width = 1280;
-    // const int screen_height = 720;
-    const int screen_width = 640;
-    const int screen_height = 480;
+    const int screen_width = 1280;
+    const int screen_height = 720;
+    // const int screen_width = 640;
+    // const int screen_height = 480;
     
     SetConfigFlags(FLAG_VSYNC_HINT);
     SetConfigFlags(FLAG_MSAA_4X_HINT);
@@ -1319,17 +1319,17 @@ int main(void)
     array2d_write(animation_parameters, f);
     fclose(f);
     
-    // int interpolation_method = 0;
+    int interpolation_method = 0;
     // int interpolation_method = 1;
-    int interpolation_method = 2;
+    // int interpolation_method = 2;
     
     // Delauney Triangulation
     
     array1d<delauney_tri> parameter_tris;
     bool display_triangulation = true;
     // bool display_triangulation = false;
-    // bool project_target = true;
-    bool project_target = false;
+    bool project_target = true;
+    // bool project_target = false;
     bool display_current = true;
     // bool display_current = false;
 
@@ -1398,10 +1398,10 @@ int main(void)
     
     Texture2D heatmap_texture = LoadTextureFromImage(heatmap_image);
     
-    // bool display_heatmap = true;
-    bool display_heatmap = false;
-    // int heatmap_index = 0;
-    int heatmap_index = 15;
+    bool display_heatmap = true;
+    // bool display_heatmap = false;
+    int heatmap_index = 0;
+    // int heatmap_index = 15;
     
     if (!use_trajectory)
     {
@@ -1859,7 +1859,6 @@ int main(void)
             DrawCircleLines(offset_x + 50, offset_y + 10, 4, LIGHTGRAY);
         }
         
-        /*
         float ui_ctrl_height = 10;
         float ui_ctrl_left = screen_width - 260;
         
@@ -1868,10 +1867,9 @@ int main(void)
         GuiLabel((Rectangle){ ui_ctrl_left + 20, ui_ctrl_height + 10, 200, 20 }, "Ctrl + Left Click - Move Camera");
         GuiLabel((Rectangle){ ui_ctrl_left + 20, ui_ctrl_height + 30, 200, 20 }, "Mouse Wheel - Zoom");
         GuiLabel((Rectangle){ ui_ctrl_left + 20, ui_ctrl_height + 50, 200, 20 }, "Right Click - Move target");
-        */
         
-        // float ui_settings_height = 120;
-        float ui_settings_height = 10;
+        float ui_settings_height = 120;
+        // float ui_settings_height = 10;
         float ui_settings_left = screen_width - 260;
         
         GuiGroupBox((Rectangle){ ui_settings_left, ui_settings_height, 250, 200 }, "settings");
