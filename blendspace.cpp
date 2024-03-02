@@ -537,7 +537,7 @@ void compute_blend_weights(
     const slice1d<float> query_distances,
     const slice2d<float> blend_matrix)
 {
-    return mat_mul_vec(blend_weights, blend_matrix, query_distances);
+    mat_mul_vec(blend_weights, blend_matrix, query_distances);
 }
 
 // Fit the blend matrix to the given animation parameters
